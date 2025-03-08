@@ -72,15 +72,18 @@ int findRoom(int persons[5]) {
 }
 
 void printReport(char mn[10][20], int mr[10], int mc, char wn[10][20], int wr[10], int wc) {
-	printf("남학생 명단 (%3d명)\n", mc);
+	printf("남학생 명단 (%d명)\n", mc);
 	for (int i = 0; i < mc; i++) {
-		printf("%d. %s [%d호]\n", i + 1, mn[i], mr[i]); // 남학생 입력한 순서대로 출력한다.
-
+		printf("%d. %s [%d호]\n", i + 1, mn[i], mr[i]);
+		if(i==10)
+			printf("%-3d. %s [%d호]\n", i + 1, mn[i], mr[i]);
 	}
 	printf("\n");
-	printf("여학생 명단 (%3d명)\n", wc);
+	printf("여학생 명단 (%d명)\n", wc);
 	for (int i = 0; i < wc; i++) {
-		printf("%d. %s [%d호]\n", i + 1, wn[i], wr[i]); // 여학생 입력한 순서대로 출력한다.
+		printf("%d. %s [%d호]\n", i + 1, wn[i], wr[i]);
+		if (i == 10)
+			printf("%-3d. %s [%d호]\n", i + 1, wn[i], wr[i]);
 	}
 	printf("\n");
 	printf("호실별 배정 명단\n");
